@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaReflectionTrail:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaReflectionTrail_jar</output-path>
+    <root id="archive" name="JavaReflectionTrail.jar">
+      <element id="module-output" name="JavaReflectionTrail" />
+    </root>
+  </artifact>
+</component>

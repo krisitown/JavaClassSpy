@@ -34,7 +34,7 @@ public class ClassSpy {
                 }
             }
             else {
-                System.out.println("  --No Type Parameters--\n");
+                System.out.println("  --No Type Parameters--");
             }
 
             //gets all of the interfaces, which the class has implemented(if any)
