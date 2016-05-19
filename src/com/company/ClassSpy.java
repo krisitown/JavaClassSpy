@@ -1,6 +1,7 @@
 package com.company;
 
 import javax.lang.model.element.TypeParameterElement;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
@@ -60,6 +61,18 @@ public class ClassSpy {
             }
             else {
                 System.out.println("  --No parent classes--  ");
+            }
+
+            //gets the annotations of the class(if any)
+            System.out.println("\nAnnotations:");
+            Annotation[] annotations = c.getAnnotations();
+            if(annotations.length != 0){
+                for (Annotation annotation : annotations) {
+                    System.out.println("-->" + annotation.toString());
+                }
+            }
+            else {
+                System.out.println("  --No Annotations--  ");
             }
         }
         catch (ClassNotFoundException classNFException){
