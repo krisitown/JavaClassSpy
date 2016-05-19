@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.lang.model.element.TypeParameterElement;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
@@ -38,7 +37,7 @@ public class ClassSpy {
                 System.out.println("  --No Type Parameters--\n");
             }
 
-            //gets all of the interfaces, which the class has implemented
+            //gets all of the interfaces, which the class has implemented(if any)
             System.out.println("\nImplemented interfaces:");
             Type[] interfaces = c.getGenericInterfaces();
             if(interfaces.length != 0){
@@ -75,11 +74,13 @@ public class ClassSpy {
                 System.out.println("  --No Annotations--  ");
             }
         }
+        //exception handling in the case where the given input isn't valid
         catch (ClassNotFoundException classNFException){
             classNFException.printStackTrace();
         }
     }
 
+    //a method which recursively adds all of the parent classes of a given class
     public static void getSuperClasses(List<Class> list, Class givenClass) {
         Class<?> parent = givenClass.getSuperclass();
         if(parent != null){
